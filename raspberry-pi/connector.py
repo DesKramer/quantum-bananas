@@ -1,7 +1,7 @@
 import requests
 
 class Connector:
-    def checkConnection(self):
+    def checkStatus(self):
         r = requests.get(self.url)
         return r.status_code
 
@@ -30,4 +30,4 @@ class Connector:
 
 
 con = Connector()
-print(con.checkConnection())
+print(con.checkStatus())
