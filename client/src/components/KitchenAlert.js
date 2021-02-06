@@ -2,21 +2,24 @@ import React, {Fragment, useEffect} from 'react';
 import { Container, Card, Row, Image, Button } from 'react-bootstrap';
 
 // Redux import
-import { connect } from 'react-redux';
-import { checkAlerts } from '../actions/kitchen';
-import store from '../store';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getKitchen } from '../actions/kitchen';
+import store from '../store';
 
-const KitchenAlert = (alerts) => {
+const KitchenAlert = ( {items} ) => {
     useEffect(() => {
-        store.dispatch(checkAlerts());
+        store.dispatch(getKitchen());
     }, []);
-
-    let kAlerts = [];
-
-    if(alerts !== null && alerts.length>0 ){
+    
+    
+    if(items !== null && items.length > 0 ){
+        console.log("Items" + items);
         return (
-            <div>Found something</div>
+            <div>
+                <h2>Found something</h2>
+                {/* <p>{items.kitchen}</p> */}
+            </div>
         )
     } else {
         return (
@@ -31,14 +34,14 @@ const KitchenAlert = (alerts) => {
 
 
 KitchenAlert.propTypes = {
-    alerts: PropTypes.array.isRequired,
+    items: PropTypes.array.isRequired,
 };
 
 
 const mapStateToProps = state => ({
-    alerts: state.alert,
+    items: state.kitchen,
 });
 
 
 export default connect(mapStateToProps, {
-    checkAlerts,})(KitchenAlert);
+    getKitchen,})(KitchenAlert);

@@ -1,18 +1,21 @@
 import axios from 'axios';
-
-import {GET_ALERT} from './types';
+import {GET_KITCHEN, GET_KITCHEN_FAIL} from './types';
 
 // Check to find an alert from KitchenPi
-export const checkAlerts = () =>  async dispatch => {
+export const getKitchen = () =>  async dispatch => {
     try {
         // Will need to match up with end points of server
-        const res = await axios.get('/api/alerts/');
+        const res = await axios.get('/kitchens/');
 
         dispatch({
-            type: GET_ALERT,
-            payload: res.data
+            type: GET_KITCHEN,
+            payload: res.data,
         });
     } catch (err) {
-        console.log(err.message);
+        // dispatch({
+        //     type: GET_KITCHEN_FAIL,
+        //     payload: { msg: err.response.statusText, status: err.response.status},
+        // });
+        console.error(err.message);
     }
 }

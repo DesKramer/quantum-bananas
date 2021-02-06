@@ -1,12 +1,18 @@
 import { Container, Jumbotron } from "react-bootstrap";
 import KitchenAlert from './components/KitchenAlert';
 
-function App() {
+import { Provider } from 'react-redux';
+import store from './store';
+
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>AI Kitchen Helper</h1>
-      <KitchenAlert />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <h1>AI Kitchen Helper</h1>
+        <KitchenAlert />
+      </div>
+    </Provider>
   );
 }
 

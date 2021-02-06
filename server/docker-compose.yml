@@ -10,7 +10,7 @@ services:
       - /api/node_modules
       - ./api:/api
     ports:
-      - "3000:3000"
+      - "5000:3000"
     networks:
       - app
     restart: unless-stopped
