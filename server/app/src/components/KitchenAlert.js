@@ -16,7 +16,6 @@ const KitchenAlert = ({ items }) => {
 
   if (items !== null && items.length > 0) {
     items.forEach((item) => {
-      console.log(item);
       kList.push(
         <Card>
           <h2>{item.kitchen}</h2>
