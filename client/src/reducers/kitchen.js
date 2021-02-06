@@ -8,7 +8,7 @@ export default function (state = initialState, action) {
     
     switch (type) {
         case GET_KITCHEN:
-            return [...state, payload];
+            return [...state, ...payload];
         case GET_KITCHEN_FAIL: 
             return {...state, ...payload};
         default:

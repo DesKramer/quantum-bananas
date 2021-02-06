@@ -18,7 +18,13 @@ const KitchenAlert = ( {items} ) => {
     if(items !== null && items.length > 0 ){
         items.map(item => {
             console.log(item);
-            console.log(item.size);
+            kList.push(
+                <Card>
+                    <h2>{item.kitchen}</h2>
+                    <div />
+                    <p>Can see : {item.objects}</p>
+                </Card>
+            );
         })
         return (
             <div>
