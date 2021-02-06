@@ -1,47 +1,51 @@
 import React, { Fragment, useEffect } from "react";
-import { Container, Card, Row, Image, Button } from "react-bootstrap";
-
-// Redux import
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getKitchen } from "../actions/kitchen";
 import store from "../store";
 
-const KitchenAlert = ({ items }) => {
+const KitchenAlert = ({ item }) => {
   useEffect(() => {
     store.dispatch(getKitchen());
   }, []);
 
-  let kList = [];
+  if (Object.keys(item).length !== 0) {
+    const objects = item.objects.split(",");
 
-  if (items !== null && items.length > 0) {
-    items.forEach((item) => {
-      kList.push(
-        <Card>
-          <h2>{item.kitchen}</h2>
-          <div />
-          <p>Can see : {item.objects}</p>
-        </Card>
-      );
-    });
-    return <div>{kList}</div>;
+    return (
+      <Fragment>
+        <h2>is: {item.kitchen}</h2>
+        {item.messy ? "The kitchen is messy" : "The kitchen is not messy"}
+        <p>Can see : {item.objects}</p>
+        {objects.length > 0 ? (
+          <Fragment>
+            <p>You NEED to clean the following:</p>
+            <ul>
+              {objects.map((object, index) => {
+                return <li key={index}>{object}</li>;
+              })}
+            </ul>
+          </Fragment>
+        ) : (
+          ""
+        )}
+      </Fragment>
+    );
   } else {
     return (
       <div>
-        <Card>
-          <h2>AI Kitchen Helper detects no mess.</h2>
-        </Card>
+        <h2>AI Kitchen Helper detects no mess...</h2>
       </div>
     );
   }
 };
 
 KitchenAlert.propTypes = {
-  items: PropTypes.array.isRequired,
+  item: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  items: state.kitchen,
+  item: state.kitchen,
 });
 
 export default connect(mapStateToProps, {
