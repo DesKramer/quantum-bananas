@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>IMG_2123.jpg</filename>
+	<path>/Users/alexis/Documents/kitchen_object_detection/images/test/IMG_2123.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>600</width>
+		<height>800</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>jugo_jumex</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>267</xmin>
+			<ymin>314</ymin>
+			<xmax>325</xmax>
+			<ymax>449</ymax>
+		</bndbox>
+	</object>
+</annotation>
