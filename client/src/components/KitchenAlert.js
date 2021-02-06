@@ -13,12 +13,16 @@ const KitchenAlert = ( {items} ) => {
     }, []);
 
     
+    let kList = []
+
     if(items !== null && items.length > 0 ){
-        console.log("Items" + items);
+        items.map(item => {
+            console.log(item);
+            console.log(item.size);
+        })
         return (
             <div>
-                <h2>Found something</h2>
-                <p>{items.kitchen}</p>
+                {kList}
             </div>
         )
     } else {
