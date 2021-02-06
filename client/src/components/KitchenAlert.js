@@ -11,14 +11,14 @@ const KitchenAlert = ( {items} ) => {
     useEffect(() => {
         store.dispatch(getKitchen());
     }, []);
-    
+
     
     if(items !== null && items.length > 0 ){
         console.log("Items" + items);
         return (
             <div>
                 <h2>Found something</h2>
-                {/* <p>{items.kitchen}</p> */}
+                <p>{items.kitchen}</p>
             </div>
         )
     } else {
