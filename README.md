@@ -6,6 +6,15 @@ Testing github fork push 👌
 
 MERN - Web API
 
+### Dependancies
+
+You will need to have installed:
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [Node.JS / NPM](https://nodejs.org/en/download/)
+
+Once installed, navigate to the `/server` directory and run the following control commands...
+
 ### Controls
 
 #### Start
