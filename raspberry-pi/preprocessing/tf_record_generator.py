@@ -49,7 +49,7 @@ def example(group,path):
 
 
 def group(df,attribute):
-    data = namedtuple('data',('file_name','object'])
+    data = namedtuple('data',['file_name','object'])
     df = df.groupby(attributee)
     return [data(file_name,df.get_group(x)) for filename, x in zip(df.groups.keys(), df.groups)]   
 
@@ -82,4 +82,3 @@ if __name__ == '__main__':
     writer.close()
     output = os.path.join(os.getcwd(),args.output)
     print ("created Tf records in the format {}".format(output))
-t 
