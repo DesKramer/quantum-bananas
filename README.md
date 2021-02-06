@@ -4,7 +4,7 @@ Testing github fork push 👌
 
 ## /server
 
-MERN - Web API
+PERN - Web API
 
 ## /raspberry-pi
 
