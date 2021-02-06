@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  api:
+    container_name: api
+    build:
+      context: ./api
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /api/node_modules
+      - ./api:/api
+    ports:
+      - "3000:3000"
+    networks:
+      - app
+    restart: unless-stopped
+  app:
+    container_name: app
+    build:
+      context: ./app
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - ./app:/app
+    ports:
+      - "8000:3000"
+    networks:
+      - app
+    restart: unless-stopped
+networks:
+  app:
