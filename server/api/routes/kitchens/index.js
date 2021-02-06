@@ -3,10 +3,15 @@ const router = express.Router();
 const Kitchen = require("../../models/Kitchen");
 
 router.get("/", async (req, res) => {
-  res.status(200).json({ message: "Kitchen Route!" });
+  try {
+    const kitchens = await Kitchen.find();
+    res.status(200).json({ kitchens });
+  } catch (err) {
+    res.status(404).json({ message: err });
+  }
 });
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   const { kitchen, messy, objects } = req.body;
 
   const kitchenRow = new Kitchen({
@@ -15,14 +20,12 @@ router.post("/", (req, res) => {
     objects: objects,
   });
 
-  kitchenRow
-    .save()
-    .then((data) => {
-      res.status(200).json(data);
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+  try {
+    const savedKitche = await kitchenRow;
+    res.status(200).json(savedKitche);
+  } catch (err) {
+    res.status(404).json({ message: err });
+  }
 });
 
 module.exports = router;
