@@ -1,18 +1,21 @@
 const express = require("express");
 const router = express.Router();
-const Test = require("../../models/Test");
+const Kitchen = require("../../models/Kitchen");
 
 router.get("/", async (req, res) => {
-  res.status(200).json({ message: "MDB Route!" });
+  res.status(200).json({ message: "Kitchen Route!" });
 });
 
 router.post("/", (req, res) => {
-  const test = new Test({
-    kitchen: req.body.kitchen,
-    messy: req.body.messy,
+  const { kitchen, messy, objects } = req.body;
+
+  const kitchenRow = new Kitchen({
+    kitchen: kitchen,
+    messy: messy,
+    objects: objects,
   });
 
-  test
+  kitchenRow
     .save()
     .then((data) => {
       res.status(200).json(data);

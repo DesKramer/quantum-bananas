@@ -1,12 +1,16 @@
 const mongoose = require("mongoose");
 
-const TestSchema = new mongoose.Schema({
+const KitchenSchema = new mongoose.Schema({
   kitchen: {
     type: String,
   },
   messy: {
     type: Boolean,
     default: false,
+    required: true,
+  },
+  objects: {
+    type: String,
   },
   date: {
     type: Date,
@@ -14,4 +18,4 @@ const TestSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Tests", TestSchema);
+module.exports = mongoose.model("Kitchens", KitchenSchema);

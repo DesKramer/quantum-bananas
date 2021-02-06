@@ -7,7 +7,6 @@ const bodyParser = require("body-parser");
 
 const mongodbPassword = "admin123";
 const mongodbDatabase = "testdb";
-const mongodbCollection = "testdb";
 const mongodbUri = `mongodb+srv://admin:${mongodbPassword}@cluster0.qpu8j.mongodb.net/${mongodbDatabase}?retryWrites=true&w=majority`;
 
 app.use(cors());
@@ -20,8 +19,6 @@ mongoose
   })
   .then(() => {
     console.log("MongoDB Connected...");
-    const db = client.db(mongodbDatabase);
-    const quotesCollection = db.collection(mongodbCollection);
   })
   .catch((err) => console.log(err));
 
