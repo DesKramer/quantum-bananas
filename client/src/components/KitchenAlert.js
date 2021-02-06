@@ -7,7 +7,7 @@ import { checkAlerts } from '../actions/kitchen';
 import store from '../store';
 import PropTypes from 'prop-types';
 
-const KitchenAlert = ({ alerts }) => {
+const KitchenAlert = (alerts) => {
     useEffect(() => {
         store.dispatch(checkAlerts());
     }, []);
