@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docker:build": "docker-compose -p quantumBananas_app build",
+    "docker:up": "docker-compose -p quantumBananas_app up -d",
+    "docker:up:attached": "docker-compose -p quantumBananas_app up",
+    "docker:down": "docker-compose -p quantumBananas_app down",
+    "docker:down:volumes": "docker-compose -p quantumBananas_app down --volumes"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
