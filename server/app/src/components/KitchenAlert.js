@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getKitchen } from "../actions/kitchen";
 import store from "../store";
+import { subscribeToTimer } from "../io";
 
 const KitchenAlert = ({ item }) => {
   useEffect(() => {
     store.dispatch(getKitchen());
+    subscribeToTimer((err, timestamp) => console.log(timestamp));
   }, []);
 
   if (Object.keys(item).length !== 0) {
