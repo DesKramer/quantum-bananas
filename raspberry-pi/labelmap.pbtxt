@@ -1,0 +1,77 @@
+item {
+  id: 1
+  name: 'can'
+}
+
+item {
+  id: 2
+  name: 'pot-top'
+}
+
+item {
+  id: 3
+  name: 'knife'
+}
+
+item {
+  id: 4
+  name: 'baking-tray'
+}
+
+item {
+  id: 5
+  name: 'glass'
+}
+
+item {
+  id: 6
+  name: 'bowl'
+}
+
+item {
+  id: 7
+  name: 'rag'
+}
+
+item {
+  id: 8
+  name: 'pot'
+}
+item {
+  id: 9
+  name: 'water_bottle'
+}
+
+item {
+  id: 10
+  name: 'bottle'
+}
+
+item {
+  id: 11
+  name: 'pan'
+}
+
+item {
+  id: 12
+  name: 'cup'
+}
+item {
+  id: 13
+  name: 'board'
+}
+
+item {
+  id: 14
+  name: 'colander'
+}
+
+item {
+  id: 15
+  name: 'measuring-cup'
+}
+
+item {
+  id: 16
+  name: 'plate'
+}
