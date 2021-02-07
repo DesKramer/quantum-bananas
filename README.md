@@ -1,9 +1,14 @@
 # Quantum Bananas
 
-![Quantum Bananas Logo](assets/quantum-bananas-dark.png?raw=true&width=25% "Logo")
-![Quantum Bananas Logo](assets/quantum-bananas-light.png?raw=true&width=25% "Logo")
+![Quantum Bananas Logo](assets/quantum-bananas-dark.png?raw=true "Logo")
+![Quantum Bananas Logo](assets/quantum-bananas-light.png?raw=true "Logo")
 
 <img src="assets/quantum-bananas-dark.png" alt="Quantum Bananas Logo" width="25%" height="auto">
+<img src="assets/quantum-bananas-light.png" alt="Quantum Bananas Logo" width="25%" height="auto">
+
+## Demonstration
+
+You can watch our demonstration on [YouTube](https://updateth.is)!
 
 ## /server
 
