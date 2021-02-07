@@ -1,8 +1,8 @@
 # Quantum Bananas
 
-![Quantum Bananas Logo](assets/quantum-bananas.png?raw=true "Logo")
-
 <img src="assets/quantum-bananas.png" alt="Quantum Bananas Logo" width="25%" height="auto">
+
+The aim of this project is to create an AI helper to tell you to clean your kitchen when it is dirty. It achieves this by sending a post request to our API which submits a post request to the database and raises an event with our app.
 
 ## Demonstration
 
