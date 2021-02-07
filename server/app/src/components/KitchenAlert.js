@@ -1,29 +1,23 @@
 import React, { Fragment, useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { getKitchen } from "../actions/kitchen";
-import store from "../store";
 import { latestKitchen } from "../io";
 
-const KitchenAlert = ({ item }) => {
-  const [sItem, updateItem] = useState(item);
+const KitchenAlert = () => {
+  const [item, updateItem] = useState({});
 
   useEffect(() => {
-    store.dispatch(getKitchen());
     latestKitchen((err, kitchen) => {
-      console.log(kitchen);
-      updateItem((sItem) => kitchen);
+      updateItem((item) => kitchen);
     });
   }, []);
 
-  if (Object.keys(sItem).length !== 0) {
-    const objects = sItem.objects.split(",");
+  if (Object.keys(item).length !== 0) {
+    const objects = item.objects.split(",");
 
     return (
       <Fragment>
-        <h2>is: {sItem.kitchen}</h2>
-        {sItem.messy ? "The kitchen is messy" : "The kitchen is not messy"}
-        <p>Can see : {sItem.objects}</p>
+        <h2>is: {item.kitchen}</h2>
+        {item.messy ? "The kitchen is messy" : "The kitchen is not messy"}
+        <p>Can see : {item.objects}</p>
         {objects.length > 0 ? (
           <Fragment>
             <p>You NEED to clean the following:</p>
@@ -47,14 +41,4 @@ const KitchenAlert = ({ item }) => {
   }
 };
 
-KitchenAlert.propTypes = {
-  item: PropTypes.object.isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  item: state.kitchen,
-});
-
-export default connect(mapStateToProps, {
-  getKitchen,
-})(KitchenAlert);
+export default KitchenAlert;
