@@ -33,15 +33,20 @@ mongoose
   .catch((err) => console.log(err));
 
 io.on("connection", (client) => {
-  client.on("subscribeToTimer", (interval) => {
-    console.log("client is subscribing to timer with interval ", interval);
-    setInterval(() => {
-      client.emit("timer", new Date());
-    }, interval);
-  });
+  // client.on("subscribeToTimer", (interval) => {
+  //   console.log("client is subscribing to timer with interval ", interval);
+  //   setInterval(() => {
+  //     client.emit("timer", new Date());
+  //   }, interval);
+  // });
+  // io.emit("timer", new Date());
 });
 
 //  Connect all our routes to our application
+app.use((req, res, next) => {
+  res.locals["socketio"] = io;
+  next();
+});
 app.use("/", routes);
 
 // Turn on that server!
