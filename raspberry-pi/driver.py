@@ -16,12 +16,14 @@ from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
  
  
-PATH_TO_LABELS = 'labelmap.pbtxt'
-category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELS, use_display_name=True)
+# PATH_TO_LABELS = 'labelmap.pbtxt'
+# category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELS, use_display_name=True)
  
 model_name = 'inference_graph'
-detection_model = load_model(model_name)
- 
+PATH_TO_FROZEN_GRAPH = MODEL_NAME + '/frozen_inference_graph.pb'
+PATH_TO_LABELS = 'training/labelmap.pbtxt'
+
+
 def run_inference_for_single_image(model, image):
   image = np.asarray(image)
   # The input needs to be a tensor, convert it using `tf.convert_to_tensor`.
