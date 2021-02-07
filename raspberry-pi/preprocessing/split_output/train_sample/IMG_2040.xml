@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>IMG_2040.jpg</filename>
+	<path>/Users/alexis/Documents/kitchen_object_detection/images/test/IMG_2040.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>600</width>
+		<height>800</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>can</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>289</xmin>
+			<ymin>338</ymin>
+			<xmax>366</xmax>
+			<ymax>480</ymax>
+		</bndbox>
+	</object>
+</annotation>
