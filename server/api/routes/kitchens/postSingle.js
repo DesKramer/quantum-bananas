@@ -12,11 +12,6 @@ module.exports = async (req, res) => {
   try {
     const savedKitchen = await kitchenRow.save();
     res.status(200).json(savedKitchen);
-    // var io = req.io;
-    // io.emit("newTweet", "test");
-    // io.emit("timer", new Date());
-    // var socketio = require("./socket.io");
-    // socketio.sockets.sockets["subscribeToTimer"].emit("timer", new Date());
     const io = res.locals["socketio"];
     io.emit("timer", new Date());
   } catch (err) {
