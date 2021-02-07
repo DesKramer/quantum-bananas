@@ -8,7 +8,7 @@ You can watch our demonstration on [YouTube](https://updateth.is)!
 
 ## /server
 
-[/server](/server) contains our MERN stack contained and ran with Docker.
+[server](/server) contains our MERN stack contained and ran with Docker.
 
 Our MERN stack consists of:
 
@@ -24,7 +24,7 @@ You will need to have installed:
 - [Docker](https://docs.docker.com/get-docker/)
 - [Node.JS / NPM](https://nodejs.org/en/download/)
 
-Once installed, navigate to the (/server)[/server] directory and run the [start](#start) command...
+Once installed, navigate to the (/server)[server] directory and run the [start](#start) command...
 
 ### Controls
 
@@ -60,13 +60,13 @@ This stops the docker enviroment.
 
 ### Errors
 
-You may see an error when first running the (start)[#start] command. You may have to enter into both the (api)[/server/api] and (app)[/server/app] folders and run `npm i` respectively, and then the (stop)[#stopdown], (build)[#build], (start)[#start] to fix this.
+You may see an error when first running the (start)[#start] command. You may have to enter into both the (api)[server/api] and (app)[server/app] folders and run `npm i` respectively, and then the (stop)[#stopdown], (build)[#build], (start)[#start] to fix this.
 
 ### Screenshots
 
-|                     App On Load                     |                     App Get Latest Kitchen                     |
-| :-------------------------------------------------: | :------------------------------------------------------------: |
-| ![App On Load](assets/server-app-latestkitchen.png) | ![App Get Latest Kitchen](assets/server-app-latestkitchen.png) |
+|                 App On Load                  |                     App Get Latest Kitchen                     |
+| :------------------------------------------: | :------------------------------------------------------------: |
+| ![App On Load](assets/server-app-onload.png) | ![App Get Latest Kitchen](assets/server-app-latestkitchen.png) |
 
 ## /raspberry-pi
 
