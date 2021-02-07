@@ -16,7 +16,9 @@ const KitchenAlert = () => {
     return (
       <Fragment>
         <h2>is: {item.kitchen}</h2>
-        {item.messy ? "The kitchen is messy" : "The kitchen is not messy"}
+        {item.messy
+          ? "AI Kitchen Helper detects a mess!"
+          : "AI Kitchen Helper detects no mess"}
         <p>Can see : {item.objects}</p>
         {objects.length > 0 ? (
           <Fragment>
@@ -35,7 +37,7 @@ const KitchenAlert = () => {
   } else {
     return (
       <div>
-        <h2>AI Kitchen Helper detects no mess...</h2>
+        <h2>Please run AI Kitchen Helper...</h2>
       </div>
     );
   }
