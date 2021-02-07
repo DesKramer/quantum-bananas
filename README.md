@@ -1,10 +1,8 @@
 # Quantum Bananas
 
-![Quantum Bananas Logo](assets/quantum-bananas-dark.png?raw=true "Logo")
-![Quantum Bananas Logo](assets/quantum-bananas-light.png?raw=true "Logo")
+![Quantum Bananas Logo](assets/quantum-bananas.png?raw=true "Logo")
 
-<img src="assets/quantum-bananas-dark.png" alt="Quantum Bananas Logo" width="25%" height="auto">
-<img src="assets/quantum-bananas-light.png" alt="Quantum Bananas Logo" width="25%" height="auto">
+<img src="assets/quantum-bananas.png" alt="Quantum Bananas Logo" width="25%" height="auto">
 
 ## Demonstration
 
