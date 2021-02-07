@@ -10,7 +10,7 @@ services:
       - /api/node_modules
       - ./api:/api
     ports:
-      - "5000:3000"
+      - "5000:5000"
     networks:
       - app
     restart: unless-stopped
@@ -23,7 +23,7 @@ services:
       - /app/node_modules
       - ./app:/app
     ports:
-      - "8000:3000"
+      - "3000:3000"
     networks:
       - app
     restart: unless-stopped
