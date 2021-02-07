@@ -62,6 +62,12 @@ This stops the docker enviroment.
 
 You may see an error when first running the (start)[#start] command. You may have to enter into both the (api)[/server/api] and (app)[/server/app] folders and run `npm i` respectively, and then the (stop)[#stopdown], (build)[#build], (start)[#start] to fix this.
 
+### Screenshots
+
+|                     App On Load                     |                     App Get Latest Kitchen                     |
+| :-------------------------------------------------: | :------------------------------------------------------------: |
+| ![App On Load](assets/server-app-latestkitchen.png) | ![App Get Latest Kitchen](assets/server-app-latestkitchen.png) |
+
 ## /raspberry-pi
 
 RaspberryPi AI Object Recognition
