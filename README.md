@@ -1,6 +1,8 @@
 # Quantum Bananas
 
-Testing github fork push 👌
+![Quantum Bananas Logo](assets/quantum-bananas-dark.png?raw=true "Logo")
+
+<img src="assets/quantum-bananas-dark.png" alt="Quantum Bananas Logo" width="25%" height="auto">
 
 ## /server
 
