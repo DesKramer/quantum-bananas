@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { latestKitchen } from "../io";
+import { latestKitchen } from "../socketIo";
 
 const KitchenAlert = () => {
   const [item, updateItem] = useState({});
