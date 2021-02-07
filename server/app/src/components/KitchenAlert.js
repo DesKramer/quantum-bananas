@@ -14,30 +14,44 @@ const KitchenAlert = () => {
     const objects = item.objects.split(",");
 
     return (
-      <Fragment>
-        <h2>is: {item.kitchen}</h2>
-        {item.messy
-          ? "AI Kitchen Helper detects a mess!"
-          : "AI Kitchen Helper detects no mess"}
-        <p>Can see : {item.objects}</p>
-        {objects.length > 0 ? (
+      <div className="kitchen__latest">
+        <p>
+          {item.messy
+            ? "AI Kitchen Helper detects a mess"
+            : "AI Kitchen Helper detects no mess"}
+          {item.kitchen ? (
+            <Fragment>
+              {" "}
+              in
+              <span className="is-bold"> {item.kitchen}</span>
+            </Fragment>
+          ) : (
+            ""
+          )}
+          !
+        </p>
+        {objects[0] !== "" ? (
           <Fragment>
             <p>You NEED to clean the following:</p>
-            <ul>
+            <ul className="kitchen__list">
               {objects.map((object, index) => {
-                return <li key={index}>{object}</li>;
+                return (
+                  <li key={index} className="kitchen__list__item">
+                    {object}
+                  </li>
+                );
               })}
             </ul>
           </Fragment>
         ) : (
           ""
         )}
-      </Fragment>
+      </div>
     );
   } else {
     return (
       <div>
-        <h2>Please run AI Kitchen Helper...</h2>
+        <h3>Please run AI Kitchen Helper...</h3>
       </div>
     );
   }
