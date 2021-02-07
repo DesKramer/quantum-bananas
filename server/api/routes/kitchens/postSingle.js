@@ -10,8 +10,10 @@ module.exports = async (req, res) => {
   });
 
   try {
+    const io = res.locals["socketio"];
     const savedKitchen = await kitchenRow.save();
     res.status(200).json(savedKitchen);
+    io.emit("latestKitchen", savedKitchen);
   } catch (err) {
     res.status(404).json({ message: err });
   }

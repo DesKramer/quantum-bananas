@@ -8,10 +8,10 @@ import store from "./store";
 const App = () => {
   return (
     <Provider store={store}>
-      <React.Fragment>
+      <div className="kitchen">
         <h1>AI Kitchen Helper</h1>
         <KitchenAlert />
-      </React.Fragment>
+      </div>
     </Provider>
   );
 };

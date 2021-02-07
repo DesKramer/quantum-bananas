@@ -1,53 +1,60 @@
-import React, { Fragment, useEffect } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { getKitchen } from "../actions/kitchen";
-import store from "../store";
+import React, { Fragment, useState, useEffect } from "react";
+import { latestKitchen } from "../io";
 
-const KitchenAlert = ({ item }) => {
+const KitchenAlert = () => {
+  const [item, updateItem] = useState({});
+
   useEffect(() => {
-    store.dispatch(getKitchen());
+    latestKitchen((err, kitchen) => {
+      updateItem((item) => kitchen);
+    });
   }, []);
 
   if (Object.keys(item).length !== 0) {
     const objects = item.objects.split(",");
 
     return (
-      <Fragment>
-        <h2>is: {item.kitchen}</h2>
-        {item.messy ? "The kitchen is messy" : "The kitchen is not messy"}
-        <p>Can see : {item.objects}</p>
-        {objects.length > 0 ? (
+      <div className="kitchen__latest">
+        <p>
+          {item.messy
+            ? "AI Kitchen Helper detects a mess"
+            : "AI Kitchen Helper detects no mess"}
+          {item.kitchen ? (
+            <Fragment>
+              {" "}
+              in
+              <span className="is-bold"> {item.kitchen}</span>
+            </Fragment>
+          ) : (
+            ""
+          )}
+          !
+        </p>
+        {objects[0] !== "" ? (
           <Fragment>
             <p>You NEED to clean the following:</p>
-            <ul>
+            <ul className="kitchen__list">
               {objects.map((object, index) => {
-                return <li key={index}>{object}</li>;
+                return (
+                  <li key={index} className="kitchen__list__item">
+                    {object}
+                  </li>
+                );
               })}
             </ul>
           </Fragment>
         ) : (
           ""
         )}
-      </Fragment>
+      </div>
     );
   } else {
     return (
       <div>
-        <h2>AI Kitchen Helper detects no mess...</h2>
+        <h3>Please run AI Kitchen Helper...</h3>
       </div>
     );
   }
 };
 
-KitchenAlert.propTypes = {
-  item: PropTypes.object.isRequired,
-};
-
-const mapStateToProps = (state) => ({
-  item: state.kitchen,
-});
-
-export default connect(mapStateToProps, {
-  getKitchen,
-})(KitchenAlert);
+export default KitchenAlert;
