@@ -30,10 +30,3 @@ class Connector:
 
     def __init__(self):
         self.url = 'http://localhost:5000/kitchens/'
-
-
-con = Connector()
-# print(con.checkStatus())
-items = "Glass, Pot, Pan, Fork, Can, Plate"
-con.postKitchen(items)
-# con.getKitchens()
