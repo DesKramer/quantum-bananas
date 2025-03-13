@@ -1,6 +1,6 @@
 # Quantum Bananas
 
-The aim of this project is to create an AI helper that will advice you to clean your kitchen when it thinks it is dirty. Once it has decided it will sends a post request to our API which submits posts to the database and updates our app to let you know what it has rated.
+The aim of this project is to create an AI helper that will advise you to clean your kitchen when it thinks it is dirty. Once it has decided it will sends a post request to our API which submits posts to the database and updates our app to let you know what it has rated.
 
 ## Demonstration
 
